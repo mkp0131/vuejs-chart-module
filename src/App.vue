@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>🔥 Render</h1>
+    <render-html />
+    <h1>✅ 체크박스</h1>
+    <div>
+      <check-box v-model="checked" />
+    </div>
+    <h1>👋 차트</h1>
+    <bar-chart></bar-chart>
+    <line-chart></line-chart>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BarChart from "./components/BarChart.vue";
+import LineChart from "./components/LineChart.vue";
+import CheckBox from "./components/CheckBox.vue";
+import RenderHtml from "./components/RenderHtml.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      checked: true,
+      txt: "안녕",
+    };
+  },
+  components: { BarChart, LineChart, CheckBox, RenderHtml },
+  methods: {
+    doToggleCheckBox() {},
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
